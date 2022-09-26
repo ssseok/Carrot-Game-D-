@@ -1,7 +1,7 @@
 body {
   background-color: black;
   height: 100vh;
-  margin: 0;
+  text-align: center;
 }
 
 .wrap {
@@ -28,9 +28,16 @@ body {
   justify-content: center;
   align-items: center;
   background-color: bisque;
+  transition: all 300ms ease;
 }
 
-.fa-play {
+.play__box:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.fa-play,
+.fa-stop {
   font-size: 28px;
 }
 
@@ -45,6 +52,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 32px;
+  visibility: hidden;
 }
 
 .counter__box {
@@ -57,4 +65,50 @@ body {
   background-color: darksalmon;
   color: white;
   text-align: center;
+  visibility: hidden;
+}
+
+.field {
+  width: 100%;
+  height: 50%;
+  margin-top: 60px;
+  position: relative;
+}
+
+.carrot:hover,
+.bug:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.pop-up {
+  width: 400px;
+  height: 140px;
+  padding: 20px;
+  background-color: #00000090;
+  color: white;
+  text-align: center;
+  margin: auto;
+  transform: translateY(-150%);
+
+  border-radius: 20px;
+}
+
+.pop-up__hide {
+  display: none;
+}
+
+.pop-up__refresh {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background-color: wheat;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.pop-up__text {
+  display: block;
+  font-size: 38px;
+  margin-top: 20px;
 }
