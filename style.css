@@ -53,6 +53,8 @@ body {
   align-items: center;
   font-size: 32px;
   visibility: hidden;
+  user-select: none;
+  cursor: auto;
 }
 
 .counter__box {
@@ -61,7 +63,7 @@ body {
   height: 50px;
   border: 2px solid black;
   border-radius: 50%;
-  font-size: 48px;
+  font-size: 38px;
   background-color: darksalmon;
   color: white;
   text-align: center;
@@ -79,6 +81,11 @@ body {
 .bug:hover {
   transform: scale(1.2);
   cursor: pointer;
+}
+
+.carrot,
+.bug {
+  transition: transform 100ms ease-in;
 }
 
 .pop-up {
@@ -105,6 +112,12 @@ body {
   background-color: wheat;
   border: 2px solid black;
   border-radius: 50%;
+  transition: transform 200ms ease-in;
+}
+
+.pop-up__refresh:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .pop-up__text {
