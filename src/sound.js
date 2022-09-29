@@ -33,6 +33,6 @@ function playSound(sound) {
 }
 
 function stopSound(sound) {
-  sound.currenTime = 0;
+  // sound.currenTime = 0;
   sound.pause();
 }

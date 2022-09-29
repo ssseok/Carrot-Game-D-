@@ -1,22 +1,34 @@
 "use strict";
 import PopUp from "./popup.js";
-import Game from "./game.js";
+import GameBulder, { Reason } from "./game.js";
+import * as sound from "./sound.js";
 
 const gameFinishBanner = new PopUp();
 
-const game = new Game(2, 2, 2);
+const game = new GameBulder()
+  .withGameDuration(60)
+  .withCarrotCount(15)
+  .withBugCount(10)
+  .build();
+
 game.setGameStopListener((res) => {
   console.log(res);
   let messge;
   switch (res) {
-    case "cancel":
+    case Reason.cancel:
       messge = "REPLAY?";
+      sound.playAlert();
+
       break;
-    case "win":
+    case Reason.win:
       messge = "YOU WON";
+      sound.playWin();
+
       break;
-    case "lose":
+    case Reason.lose:
       messge = "YOU LOSE";
+      sound.playBug();
+
       break;
     default:
       throw new Error("NO");
